@@ -1,65 +1,164 @@
-import Image from "next/image";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { Section } from "@/components/ui/Section";
+import { ArchitectureFlow } from "@/components/ArchitectureFlow";
+import { StandardsExplorer } from "@/components/StandardsExplorer";
+import { RangePowerChart } from "@/components/RangePowerChart";
+import { MqttFlow } from "@/components/MqttFlow";
+import { ProtocolCompare } from "@/components/ProtocolCompare";
+import { EnergyIoT } from "@/components/EnergyIoT";
+import { SolarDaySimulator } from "@/components/SolarDaySimulator";
+import { EvChargingTypes } from "@/components/EvChargingTypes";
+import { OcppSequence } from "@/components/OcppSequence";
+import { PeakShaving } from "@/components/PeakShaving";
+import { ConnectionPlanner } from "@/components/ConnectionPlanner";
+import { SecurityShield } from "@/components/SecurityShield";
+import { IoTWorkshop } from "@/components/IoTWorkshop";
+import { FleetLifecycle } from "@/components/FleetLifecycle";
+import { KnowledgeCheck } from "@/components/KnowledgeCheck";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div id="top" className="relative z-10">
+      <Nav />
+      <Hero />
+
+      <main>
+        <Section
+          id="architecture"
+          eyebrow="ภาพรวม"
+          title="ข้อมูลเดินทางจากเซนเซอร์ไปถึงมือเราอย่างไร"
+          intro="ทุกระบบ IoT มีโครงสร้างหลักคล้ายกัน 4 ชั้น ลองดูเส้นทางของข้อมูลหนึ่งก้อนเคลื่อนผ่านแต่ละชั้น"
+        >
+          <ArchitectureFlow />
+        </Section>
+
+        <Section
+          id="standards"
+          eyebrow="มาตรฐานการเชื่อมต่อ"
+          title="เลือกมาตรฐาน แล้วดูว่ามันทำงานอย่างไร"
+          intro="แต่ละมาตรฐานออกแบบมาเพื่องานต่างกัน — ระยะใกล้/ไกล เร็ว/ช้า กินไฟมาก/น้อย คลิกที่แต่ละชื่อเพื่อดูภาพเคลื่อนไหวและรายละเอียด"
+        >
+          <StandardsExplorer />
+        </Section>
+
+        <Section
+          id="compare"
+          eyebrow="เปรียบเทียบ"
+          title="ระยะทำการ ปะทะ การใช้พลังงาน"
+          intro="ไม่มีมาตรฐานไหน 'ดีที่สุด' มีแต่ 'เหมาะที่สุดกับงาน' กราฟนี้ช่วยให้เห็นภาพการแลกเปลี่ยน (trade-off)"
+        >
+          <RangePowerChart />
+        </Section>
+
+        <Section
+          id="planner"
+          eyebrow="ลงมือออกแบบ · เลือกเครือข่าย"
+          title="โจทย์ต่างกัน คำตอบที่เหมาะก็เปลี่ยน"
+          intro="ลองกำหนดระยะ แหล่งพลังงาน และปริมาณข้อมูล แล้วดูว่า architecture แบบใดเหมาะเป็นจุดเริ่มต้น"
+        >
+          <ConnectionPlanner />
+        </Section>
+
+        <Section
+          id="protocols"
+          eyebrow="โปรโตคอลข้อมูล"
+          title="เมื่อเชื่อมต่อได้แล้ว จะคุยกันด้วยภาษาอะไร"
+          intro="การเชื่อมต่อ (เช่น Wi-Fi) เป็นแค่ 'ถนน' ส่วนโปรโตคอลข้อมูลคือ 'ภาษา' ที่อุปกรณ์ใช้สื่อสารกันบนถนนนั้น MQTT เป็นที่นิยมที่สุดใน IoT"
+        >
+          <div className="space-y-10">
+            <MqttFlow />
+            <ProtocolCompare />
+          </div>
+        </Section>
+
+        <Section
+          id="workshop"
+          eyebrow="ลงมือออกแบบ · End-to-End"
+          title="ตาม packet หนึ่งก้อน ตั้งแต่ Sensor จนเกิด Alert"
+          intro="ระบบจริงไม่ได้จบที่การเชื่อมต่อ ลองดู topic, payload, database และสิ่งที่ควรเกิดขึ้นเมื่ออินเทอร์เน็ตหลุด"
+        >
+          <IoTWorkshop />
+        </Section>
+
+        <Section
+          id="security"
+          eyebrow="ระบบจริง · Security"
+          title="IoT ที่เชื่อมต่อได้ ต้องป้องกันตัวเองได้ด้วย"
+          intro="ความปลอดภัยไม่ใช่กล่องใบเดียว แต่เป็นเกราะหลายชั้นตั้งแต่ตัวอุปกรณ์ เครือข่าย ไปจนถึง firmware"
+        >
+          <SecurityShield />
+        </Section>
+
+        <Section
+          id="energy"
+          eyebrow="กรณีศึกษา · พลังงาน"
+          title="IoT พลังงาน: ตู้ชาร์จ EV, โซลาร์ และสมาร์ตมิเตอร์"
+          intro="อุปกรณ์พลังงานมีมาตรฐานเฉพาะของตัวเอง เลือกอุปกรณ์เพื่อดูว่าพลังงานและข้อมูลไหลอย่างไร และคุยกันด้วยโปรโตคอลอะไร"
+        >
+          <EnergyIoT />
+        </Section>
+
+        <Section
+          id="solar-day"
+          eyebrow="กรณีศึกษา · โซลาร์"
+          title="ลองดู IoT บริหารพลังงานบ้านโซลาร์ตลอด 24 ชั่วโมง"
+          intro="หัวใจของบ้านโซลาร์ยุคใหม่คือสมองที่ตัดสินใจทุกวินาที — เก็บไฟเข้าแบต ใช้เอง หรือขายคืนกริด กดเล่นแล้วดูพลังงานเคลื่อนผ่านทั้งวัน"
+        >
+          <SolarDaySimulator />
+        </Section>
+
+        <Section
+          id="charging"
+          eyebrow="กรณีศึกษา · สถานีชาร์จ EV"
+          title="สถานีชาร์จทำงานอย่างไร และทำไม DC ถึงเร็วกว่า"
+          intro="ตั้งแต่ชาร์จช้า ๆ ที่บ้านจนถึงตู้ Ultra-Fast ริมไฮเวย์ มาดูความต่างของกำลังไฟ หัวชาร์จ และเบื้องหลังการคุยกันด้วยโปรโตคอล OCPP"
+        >
+          <div className="space-y-10">
+            <EvChargingTypes />
+            <OcppSequence />
+          </div>
+        </Section>
+
+        <Section
+          id="smartgrid"
+          eyebrow="กรณีศึกษา · สมาร์ตกริด"
+          title="แบตเตอรี่ช่วยรีดยอดพีค ลดค่าไฟอาคารได้อย่างไร"
+          intro="ในระดับอาคารและกริด ระบบ IoT ใช้แบตเตอรี่จ่ายไฟแทนช่วงพีค (peak shaving) เพื่อกดยอดความต้องการไฟฟ้าสูงสุดที่การไฟฟ้านำไปคิดเงิน — ลองเปิด/ปิดระบบดูผล"
+        >
+          <PeakShaving />
+        </Section>
+
+        <Section
+          id="operations"
+          eyebrow="ระบบจริง · Reliability & Lifecycle"
+          title="ติดตั้งเสร็จ คือวันแรกของการดูแลอุปกรณ์"
+          intro="ดูสถานะ fleet, เลือกระดับการส่งข้อความ และทำความเข้าใจวงจรชีวิตตั้งแต่ลงทะเบียนจนปลดระวาง"
+        >
+          <FleetLifecycle />
+        </Section>
+
+        <Section
+          id="quiz"
+          eyebrow="ทบทวน"
+          title="ลองเลือกคำตอบจากสถานการณ์จริง"
+          intro="แบบทดสอบสั้น ๆ เพื่อเชื่อมภาพทั้งหมดเข้าด้วยกัน ตั้งแต่การเลือกเครือข่ายจนถึงการรับมือเมื่อระบบมีปัญหา"
+        >
+          <KnowledgeCheck />
+        </Section>
+      </main>
+
+      <footer className="border-t border-[var(--color-border)] px-5 py-10 sm:px-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 text-sm text-[var(--color-text-dim)]">
+          <p className="font-semibold text-[var(--color-text-soft)]">
+            IoT Connect — สื่อการเรียนรู้มาตรฐานการเชื่อมต่ออุปกรณ์ IoT
+          </p>
+          <p>
+            ค่าตัวเลขต่าง ๆ เป็นค่าโดยประมาณเพื่อการเรียนรู้ · สร้างด้วย Next.js +
+            Framer Motion
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </footer>
     </div>
   );
 }

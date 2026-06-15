@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* พื้นหลังไล่เฉดน้ำเงินเข้ม (dark tech) */
+  --color-bg: oklch(15% 0.03 265);
+  --color-bg-soft: oklch(20% 0.04 265);
+  --color-surface: oklch(24% 0.04 265);
+  --color-surface-2: oklch(28% 0.045 265);
+  --color-border: oklch(40% 0.05 265 / 0.4);
+  --color-text: oklch(96% 0.01 265);
+  --color-text-soft: oklch(75% 0.02 265);
+  --color-text-dim: oklch(60% 0.02 265);
+
+  --color-cyan: oklch(75% 0.15 220);
+  --color-violet: oklch(72% 0.16 290);
+  --color-green: oklch(78% 0.16 160);
+  --color-orange: oklch(78% 0.16 55);
+
+  --text-hero: clamp(2.4rem, 1rem + 7vw, 6rem);
+  --text-section: clamp(1.6rem, 1rem + 2.5vw, 3rem);
+
+  --space-section: clamp(4rem, 3rem + 5vw, 9rem);
+
+  --duration-normal: 300ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --radius: 18px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --font-sans: var(--font-thai), system-ui, sans-serif;
+  --font-mono: var(--font-mono-geist), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(1200px 800px at 80% -10%, oklch(30% 0.08 290 / 0.35), transparent 60%),
+    radial-gradient(1000px 700px at 0% 10%, oklch(30% 0.08 220 / 0.3), transparent 55%),
+    var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* grain/texture overlay subtle */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.mono {
+  font-family: var(--font-mono);
 }
