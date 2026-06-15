@@ -55,7 +55,7 @@ export function MqttFlow() {
         ))}
 
         {/* Publisher */}
-        <Node x={PUBLISHER.x} y={PUBLISHER.y} emoji="🌡️" title="Publisher" sub="เซนเซอร์" color="var(--color-cyan)" />
+        <Node x={PUBLISHER.x} y={PUBLISHER.y} emoji="🌡️" sub="เซนเซอร์" color="var(--color-cyan)" />
 
         {/* Broker */}
         <g>
@@ -81,7 +81,7 @@ export function MqttFlow() {
 
         {/* Subscribers */}
         {SUBS.map((s, i) => (
-          <Node key={i} x={s.x} y={s.y} emoji={s.label} title="Subscriber" sub={s.name} color="var(--color-violet)" />
+          <Node key={i} x={s.x} y={s.y} emoji={s.label} sub={s.name} color="var(--color-violet)" />
         ))}
       </svg>
 
@@ -96,14 +96,12 @@ function Node({
   x,
   y,
   emoji,
-  title,
   sub,
   color,
 }: {
   x: number;
   y: number;
   emoji: string;
-  title: string;
   sub: string;
   color: string;
 }) {

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CHARGE_MODES, type ChargeMode } from "@/lib/energyDeep";
+import { CHARGE_MODES } from "@/lib/energyDeep";
 
 export function EvChargingTypes() {
   const [activeId, setActiveId] = useState(CHARGE_MODES[2].id);

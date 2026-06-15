@@ -157,6 +157,18 @@ export default function Home() {
             ค่าตัวเลขต่าง ๆ เป็นค่าโดยประมาณเพื่อการเรียนรู้ · สร้างด้วย Next.js +
             Framer Motion
           </p>
+          <p className="mt-3 text-xs">
+            ตรวจสอบเนื้อหาล่าสุด: 15 มิถุนายน 2026 · แหล่งอ่านต่อ:{" "}
+            <a className="underline hover:text-[var(--color-text)]" href="https://mqtt.org/" target="_blank" rel="noreferrer">MQTT</a>
+            {" · "}
+            <a className="underline hover:text-[var(--color-text)]" href="https://csa-iot.org/all-solutions/matter/" target="_blank" rel="noreferrer">Matter</a>
+            {" · "}
+            <a className="underline hover:text-[var(--color-text)]" href="https://www.threadgroup.org/What-is-Thread" target="_blank" rel="noreferrer">Thread</a>
+            {" · "}
+            <a className="underline hover:text-[var(--color-text)]" href="https://openchargealliance.org/protocols/open-charge-point-protocol/" target="_blank" rel="noreferrer">OCPP</a>
+            {" · "}
+            <a className="underline hover:text-[var(--color-text)]" href="https://lora-alliance.org/about-lorawan/" target="_blank" rel="noreferrer">LoRaWAN</a>
+          </p>
         </div>
       </footer>
     </div>

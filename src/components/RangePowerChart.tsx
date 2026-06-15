@@ -33,6 +33,15 @@ const X_TICKS = [
   { m: 100000, label: "100 กม." },
 ];
 
+const POINT_OFFSETS: Record<string, { x: number; y: number; labelY: number }> = {
+  zigbee: { x: -8, y: 5, labelY: 23 },
+  thread: { x: 12, y: -7, labelY: 22 },
+  wifi: { x: -9, y: 0, labelY: 18 },
+  ethernet: { x: 13, y: 0, labelY: 19 },
+  nbiot: { x: -8, y: 3, labelY: 21 },
+  ltem: { x: 10, y: -4, labelY: 20 },
+};
+
 export function RangePowerChart() {
   return (
     <div className="overflow-x-auto rounded-[var(--radius)] border border-[var(--color-border)] bg-[var(--color-bg-soft)]/60 p-4 backdrop-blur-sm sm:p-6">
@@ -57,8 +66,9 @@ export function RangePowerChart() {
 
         {/* จุดของแต่ละมาตรฐาน */}
         {STANDARDS.map((s, i) => {
-          const cx = xPos(s.rangeMeters);
-          const cy = yPos(s.power);
+          const offset = POINT_OFFSETS[s.id] ?? { x: 0, y: 0, labelY: 18 };
+          const cx = xPos(s.rangeMeters) + offset.x;
+          const cy = yPos(s.power) + offset.y;
           return (
             <motion.g
               key={s.id}
@@ -76,7 +86,7 @@ export function RangePowerChart() {
                 transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.3 }}
                 style={{ filter: `drop-shadow(0 0 8px ${s.color})` }}
               />
-              <text x={cx} y={cy - 18} textAnchor="middle" fontSize="13" fontWeight="600" fill={s.color}>
+              <text x={cx} y={cy - offset.labelY} textAnchor="middle" fontSize="12" fontWeight="600" fill={s.color}>
                 {s.name}
               </text>
             </motion.g>
