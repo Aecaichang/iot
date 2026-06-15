@@ -41,16 +41,16 @@ export function IoTWorkshop() {
       </div>
 
       <div className="mt-7 overflow-x-auto pb-3">
-        <div className="relative flex min-w-[760px] items-start justify-between px-3">
-          <div className="absolute left-12 right-12 top-8 h-px bg-[var(--color-border)]" />
+        <div className="relative grid min-w-[760px] grid-cols-5 items-start">
+          <div className="absolute left-[10%] right-[10%] top-8 h-px bg-[var(--color-border)]" />
           <motion.div
-            className="absolute top-[25px] z-20 h-3 w-3 rounded-full"
-            style={{ background: online ? active.color : "#fb7185", left: `calc(${step * 25}% + 38px)` }}
+            className="absolute top-[25px] z-0 h-3 w-3 -translate-x-1/2 rounded-full"
+            style={{ background: online ? active.color : "#fb7185", left: `${10 + step * 20}%` }}
             animate={{ scale: [1, 1.5, 1] }}
             transition={{ duration: 1.2, repeat: Infinity }}
           />
           {STEPS.map((item, index) => (
-            <button key={item.name} onClick={() => setStep(index)} className="relative z-10 flex w-32 flex-col items-center text-center">
+            <button key={item.name} onClick={() => setStep(index)} className="relative z-10 flex flex-col items-center text-center">
               <motion.span
                 className="grid h-16 w-16 place-items-center rounded-2xl border bg-[var(--color-surface-2)] text-2xl"
                 animate={{

@@ -35,6 +35,8 @@ function scene(id: string, color: string) {
       return <ZigbeeScene color={color} />;
     case "ethernet":
       return <WiredStarScene color={color} />;
+    case "rs232":
+      return <SerialPointToPointScene color={color} />;
     case "rs485":
       return <BusScene color={color} />;
     default:
@@ -266,6 +268,50 @@ function WiredStarScene({ color }: { color: string }) {
       <Box x={200} y={120} label="🔀" color={color} />
       <text x="200" y="225" textAnchor="middle" fontSize="11" fill="var(--color-text-dim)">
         สายตรง · เสถียร · latency คาดเดาได้
+      </text>
+    </g>
+  );
+}
+
+function SerialPointToPointScene({ color }: { color: string }) {
+  return (
+    <g>
+      <Box x={75} y={120} label="🖥️" color={color} />
+      <Box x={325} y={120} label="⚙️" color={color} />
+
+      <line x1="100" y1="95" x2="300" y2="95" stroke={color} strokeWidth="2" />
+      <line x1="100" y1="120" x2="300" y2="120" stroke={color} strokeWidth="2" />
+      <line x1="100" y1="145" x2="300" y2="145" stroke="var(--color-border)" strokeWidth="2" />
+
+      <text x="200" y="87" textAnchor="middle" fontSize="10" fill="var(--color-text-dim)">
+        TX
+      </text>
+      <text x="200" y="113" textAnchor="middle" fontSize="10" fill="var(--color-text-dim)">
+        RX
+      </text>
+      <text x="200" y="162" textAnchor="middle" fontSize="10" fill="var(--color-text-dim)">
+        GND
+      </text>
+
+      <motion.circle
+        cy="95"
+        r="5"
+        fill={color}
+        animate={{ cx: [105, 295], opacity: [0, 1, 1, 0] }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        style={{ filter: `drop-shadow(0 0 6px ${color})` }}
+      />
+      <motion.circle
+        cy="120"
+        r="5"
+        fill={color}
+        animate={{ cx: [295, 105], opacity: [0, 1, 1, 0] }}
+        transition={{ duration: 1.8, repeat: Infinity, delay: 0.9, ease: "easeInOut" }}
+        style={{ filter: `drop-shadow(0 0 6px ${color})` }}
+      />
+
+      <text x="200" y="205" textAnchor="middle" fontSize="11" fill="var(--color-text-dim)">
+        อุปกรณ์ 2 ตัว · ส่งข้อมูลอนุกรมผ่าน TX / RX
       </text>
     </g>
   );

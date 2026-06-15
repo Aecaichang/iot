@@ -38,6 +38,7 @@ const POINT_OFFSETS: Record<string, { x: number; y: number; labelY: number }> = 
   thread: { x: 12, y: -7, labelY: 22 },
   wifi: { x: -9, y: 0, labelY: 18 },
   ethernet: { x: 13, y: 0, labelY: 19 },
+  rs232: { x: 0, y: 0, labelY: 20 },
   nbiot: { x: -8, y: 3, labelY: 21 },
   ltem: { x: 10, y: -4, labelY: 20 },
 };
