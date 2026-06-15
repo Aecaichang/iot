@@ -20,6 +20,37 @@ import { KnowledgeCheck } from "@/components/KnowledgeCheck";
 export default function Home() {
   return (
     <div id="top" className="relative z-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "IoT Connect",
+              "url": "https://iot-connect.example.com",
+              "description":
+                "สื่อการเรียนรู้แบบภาพเคลื่อนไหว อธิบายมาตรฐานการเชื่อมต่ออุปกรณ์ IoT แต่ละประเภท ตั้งแต่ Wi-Fi, Bluetooth, Zigbee, LoRaWAN ไปจนถึงโปรโตคอลข้อมูลอย่าง MQTT",
+              "inLanguage": "th-TH",
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "EducationalApplication",
+              "name": "IoT Connect",
+              "operatingSystem": "All",
+              "applicationCategory": "EducationalApplication",
+              "description":
+                "สื่อการเรียนรู้แบบภาพเคลื่อนไหว อธิบายมาตรฐานการเชื่อมต่ออุปกรณ์ IoT แต่ละประเภท ตั้งแต่ Wi-Fi, Bluetooth, Zigbee, LoRaWAN ไปจนถึงโปรโตคอลข้อมูลอย่าง MQTT",
+              "browserRequirements": "Requires HTML5 and Javascript",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "THB",
+              },
+            },
+          ]),
+        }}
+      />
       <Nav />
       <Hero />
 
