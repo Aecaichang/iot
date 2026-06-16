@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://iot-connect.example.com/sitemap.xml
+Sitemap: https://iotlearning.aecaichang.com/sitemap.xml

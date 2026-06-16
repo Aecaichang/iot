@@ -13,11 +13,15 @@ const mono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://iotlearning.aecaichang.com";
+const title = "IoT Connect — เรียนรู้มาตรฐานการเชื่อมต่ออุปกรณ์ IoT";
+const description =
+  "สื่อการเรียนรู้แบบภาพเคลื่อนไหว อธิบายมาตรฐานการเชื่อมต่ออุปกรณ์ IoT แต่ละประเภท ตั้งแต่ Wi-Fi, Bluetooth, Zigbee, LoRaWAN ไปจนถึงโปรโตคอลข้อมูลอย่าง MQTT";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iot-connect.example.com"),
-  title: "IoT Connect — เรียนรู้มาตรฐานการเชื่อมต่ออุปกรณ์ IoT",
-  description:
-    "สื่อการเรียนรู้แบบภาพเคลื่อนไหว อธิบายมาตรฐานการเชื่อมต่ออุปกรณ์ IoT แต่ละประเภท ตั้งแต่ Wi-Fi, Bluetooth, Zigbee, LoRaWAN ไปจนถึงโปรโตคอลข้อมูลอย่าง MQTT",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
   keywords: [
     "IoT",
     "Internet of Things",
@@ -46,19 +50,26 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "IoT Connect — เรียนรู้มาตรฐานการเชื่อมต่ออุปกรณ์ IoT",
-    description:
-      "สื่อการเรียนรู้แบบภาพเคลื่อนไหว อธิบายมาตรฐานการเชื่อมต่ออุปกรณ์ IoT แต่ละประเภท ตั้งแต่ Wi-Fi, Bluetooth, Zigbee, LoRaWAN ไปจนถึงโปรโตคอลข้อมูลอย่าง MQTT",
-    url: "https://iot-connect.example.com",
+    title,
+    description,
+    url: siteUrl,
     siteName: "IoT Connect",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "IoT Connect lesson preview",
+      },
+    ],
     locale: "th_TH",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IoT Connect — เรียนรู้มาตรฐานการเชื่อมต่ออุปกรณ์ IoT",
-    description:
-      "สื่อการเรียนรู้แบบภาพเคลื่อนไหว อธิบายมาตรฐานการเชื่อมต่ออุปกรณ์ IoT แต่ละประเภท ตั้งแต่ Wi-Fi, Bluetooth, Zigbee, LoRaWAN ไปจนถึงโปรโตคอลข้อมูลอย่าง MQTT",
+    title,
+    description,
+    images: ["/opengraph-image"],
   },
 };
 

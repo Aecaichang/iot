@@ -7,6 +7,7 @@ import { RangePowerChart } from "@/components/RangePowerChart";
 import { MqttFlow } from "@/components/MqttFlow";
 import { ProtocolCompare } from "@/components/ProtocolCompare";
 import { EnergyIoT } from "@/components/EnergyIoT";
+import { EnergyMicrogrid } from "@/components/EnergyMicrogrid";
 import { SolarDaySimulator } from "@/components/SolarDaySimulator";
 import { EvChargingTypes } from "@/components/EvChargingTypes";
 import { OcppSequence } from "@/components/OcppSequence";
@@ -28,7 +29,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "IoT Connect",
-              "url": "https://iot-connect.example.com",
+              "url": "https://iotlearning.aecaichang.com",
               "description":
                 "สื่อการเรียนรู้แบบภาพเคลื่อนไหว อธิบายมาตรฐานการเชื่อมต่ออุปกรณ์ IoT แต่ละประเภท ตั้งแต่ Wi-Fi, Bluetooth, Zigbee, LoRaWAN ไปจนถึงโปรโตคอลข้อมูลอย่าง MQTT",
               "inLanguage": "th-TH",
@@ -37,6 +38,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "EducationalApplication",
               "name": "IoT Connect",
+              "url": "https://iotlearning.aecaichang.com",
               "operatingSystem": "All",
               "applicationCategory": "EducationalApplication",
               "description":
@@ -122,10 +124,19 @@ export default function Home() {
         </Section>
 
         <Section
+          id="microgrid"
+          eyebrow="กรณีศึกษา · พลังงาน"
+          title="ภาพใหญ่: บ้านพลังงานอัจฉริยะหนึ่งหลัง"
+          intro="ก่อนเจาะแต่ละอุปกรณ์ ลองดูภาพรวมก่อน — โซลาร์ แบตเตอรี่ รถ EV และกริด ทั้งหมดแลกเปลี่ยนพลังงานกันบนบัสบาร์เดียว โดยมีสมอง IoT คอยตัดสินใจทุกวินาทีว่าจะเก็บ ใช้ หรือขายไฟ"
+        >
+          <EnergyMicrogrid />
+        </Section>
+
+        <Section
           id="energy"
           eyebrow="กรณีศึกษา · พลังงาน"
-          title="IoT พลังงาน: ตู้ชาร์จ EV, โซลาร์ และสมาร์ตมิเตอร์"
-          intro="อุปกรณ์พลังงานมีมาตรฐานเฉพาะของตัวเอง เลือกอุปกรณ์เพื่อดูว่าพลังงานและข้อมูลไหลอย่างไร และคุยกันด้วยโปรโตคอลอะไร"
+          title="เจาะอุปกรณ์: ตู้ชาร์จ EV, โซลาร์, แบตเตอรี่ และสมาร์ตมิเตอร์"
+          intro="อุปกรณ์พลังงานแต่ละชนิดมีมาตรฐานเฉพาะของตัวเอง เลือกอุปกรณ์เพื่อดูว่าพลังงานและข้อมูลไหลอย่างไร และคุยกันด้วยโปรโตคอลอะไร"
         >
           <EnergyIoT />
         </Section>

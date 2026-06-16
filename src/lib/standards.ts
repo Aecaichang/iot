@@ -261,9 +261,9 @@ export const PROTOCOLS: DataProtocol[] = [
     transport: "TCP",
     color: "#38bdf8",
     summary:
-      "อุปกรณ์ส่งข้อมูลไปที่ตัวกลาง (Broker) ตาม 'หัวข้อ' (topic) ใครสนใจหัวข้อไหนก็สมัครรับ ไม่ต้องรู้จักกันโดยตรง",
-    pros: ["กินแบนด์วิดท์น้อย", "เหมาะกับอุปกรณ์จำนวนมาก", "รองรับการขาดการเชื่อมต่อ"],
-    cons: ["ต้องมี Broker เป็นตัวกลาง", "ทำงานบน TCP จึงมี overhead กว่า UDP"],
+      "โปรโตคอล Client-Server แบบ publish/subscribe ที่ให้อุปกรณ์ส่งข้อความเข้า Broker ตาม topic และให้ระบบที่สนใจ subscribe รับต่อ โดยไม่ต้องรู้จักกันโดยตรง",
+    pros: ["กินแบนด์วิดท์น้อย", "รองรับ QoS 0/1/2", "มี session, retained message และ message expiry"],
+    cons: ["ต้องมี Broker เป็นตัวกลาง", "ทำงานบน TCP จึงมี overhead กว่า UDP", "ต้องออกแบบ topic และสิทธิ์ publish/subscribe ให้รัดกุม"],
   },
   {
     id: "coap",

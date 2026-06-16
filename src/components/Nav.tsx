@@ -6,7 +6,7 @@ const LINKS = [
   { href: "#planner", label: "ตัวช่วยเลือก" },
   { href: "#workshop", label: "Workshop" },
   { href: "#security", label: "Security" },
-  { href: "#energy", label: "พลังงาน" },
+  { href: "#microgrid", label: "พลังงาน" },
   { href: "#operations", label: "ดูแลระบบ" },
   { href: "#quiz", label: "Quiz" },
 ];
