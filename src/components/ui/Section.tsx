@@ -13,7 +13,7 @@ export function Section({ id, eyebrow, title, intro, children }: SectionProps) {
   return (
     <section
       id={id}
-      className="relative mx-auto w-full max-w-6xl px-5 py-[var(--space-section)] sm:px-8"
+      className="relative mx-auto w-full max-w-6xl scroll-mt-16 px-5 py-[var(--space-section)] sm:px-8"
     >
       <Reveal>
         <p className="mono mb-3 text-xs uppercase tracking-[0.25em] text-[var(--color-cyan)]">
