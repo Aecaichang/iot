@@ -98,8 +98,8 @@ const MQTT_V5_FEATURES = [
 export function MqttFlow() {
   return (
     <Card accent="var(--color-cyan)" className="space-y-7">
-      <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-        <div>
+      <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
+        <div className="min-w-0">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <h3 className="text-xl font-bold text-[var(--color-cyan)]">
@@ -224,7 +224,7 @@ export function MqttFlow() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-[var(--color-border)] bg-[#0b1020] p-4">
+        <div className="min-w-0 rounded-xl border border-[var(--color-border)] bg-[#0b1020] p-4">
           <div className="flex items-center justify-between gap-3 text-[10px] uppercase tracking-wider text-[var(--color-text-dim)]">
             <span>MQTT publish packet</span>
             <span>QoS 1</span>
