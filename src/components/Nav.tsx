@@ -5,6 +5,7 @@ const LINKS = [
   { href: "#standards", label: "มาตรฐาน" },
   { href: "#planner", label: "ตัวช่วยเลือก" },
   { href: "#workshop", label: "Workshop" },
+  { href: "#healthcare", label: "การแพทย์" },
   { href: "#security", label: "Security" },
   { href: "#microgrid", label: "พลังงาน" },
   { href: "#operations", label: "ดูแลระบบ" },

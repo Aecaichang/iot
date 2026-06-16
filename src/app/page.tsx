@@ -17,6 +17,7 @@ import { SecurityShield } from "@/components/SecurityShield";
 import { IoTWorkshop } from "@/components/IoTWorkshop";
 import { FleetLifecycle } from "@/components/FleetLifecycle";
 import { KnowledgeCheck } from "@/components/KnowledgeCheck";
+import { VitalSignMonitor } from "@/components/VitalSignMonitor";
 
 export default function Home() {
   return (
@@ -112,6 +113,15 @@ export default function Home() {
           intro="ระบบจริงไม่ได้จบที่การเชื่อมต่อ ลองดู topic, payload, database และสิ่งที่ควรเกิดขึ้นเมื่ออินเทอร์เน็ตหลุด"
         >
           <IoTWorkshop />
+        </Section>
+
+        <Section
+          id="healthcare"
+          eyebrow="กรณีศึกษา · การแพทย์"
+          title="เครื่องวัดสัญญาณชีพส่งข้อมูลเข้าระบบโรงพยาบาลอย่างไร"
+          intro="Vital Sign Monitor (Northern Aquarius) วัด NIBP, SpO₂, อุณหภูมิ และชีพจร แล้วส่งเป็นข้อความ HL7 ผ่าน LAN/WAN เข้าฐานข้อมูล HIS เพื่อแสดงผลบน BMS HOSxP V.4 กดเชื่อมต่อเพื่อดูข้อมูลไหลแบบเรียลไทม์"
+        >
+          <VitalSignMonitor />
         </Section>
 
         <Section
