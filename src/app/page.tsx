@@ -18,6 +18,7 @@ import { IoTWorkshop } from "@/components/IoTWorkshop";
 import { FleetLifecycle } from "@/components/FleetLifecycle";
 import { KnowledgeCheck } from "@/components/KnowledgeCheck";
 import { VitalSignMonitor } from "@/components/VitalSignMonitor";
+import { HL7Transport } from "@/components/HL7Transport";
 
 export default function Home() {
   return (
@@ -122,6 +123,15 @@ export default function Home() {
           intro="Vital Sign Monitor (Northern Aquarius) วัด NIBP, SpO₂, อุณหภูมิ และชีพจร แล้วส่งเป็นข้อความ HL7 ผ่าน LAN/WAN เข้าฐานข้อมูล HIS เพื่อแสดงผลบน BMS HOSxP V.4 กดเชื่อมต่อเพื่อดูข้อมูลไหลแบบเรียลไทม์"
         >
           <VitalSignMonitor />
+        </Section>
+
+        <Section
+          id="hl7"
+          eyebrow="กรณีศึกษา · การแพทย์"
+          title="HL7 / MLLP / LAN-WAN — เนื้อใน ซอง และถนน"
+          intro="ข้อความที่เครื่อง Aquarius ส่งออกไปประกอบด้วย 3 ชั้นซ้อนกัน: HL7 คือเนื้อจดหมาย, MLLP คือซองที่ห่อและรอใบตอบรับ, LAN/WAN คือถนนที่รถวิ่ง ดู MLLP handshake ที่การันตีว่าข้อมูลคนไข้ไม่หาย"
+        >
+          <HL7Transport />
         </Section>
 
         <Section
