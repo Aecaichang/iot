@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📡 IoT Connect
 
-## Getting Started
+**สื่อการเรียนรู้แบบ interactive เรื่องการเชื่อมต่ออุปกรณ์ IoT** — อธิบายมาตรฐานการเชื่อมต่อแต่ละแบบด้วยภาพเคลื่อนไหวและเครื่องมือจำลองที่เล่นได้จริง ตั้งแต่เลือก protocol ยันจ่ายไฟให้ EV
 
-First, run the development server:
+🔗 **Live:** [iotlearning.aecaichang.com](https://iotlearning.aecaichang.com)
+
+## เนื้อหาครอบคลุม
+
+- **มาตรฐานการเชื่อมต่อ** — Wi-Fi, Bluetooth, Zigbee, LoRaWAN พร้อมกราฟเทียบระยะ/พลังงาน และตัวช่วยเลือก protocol ให้เหมาะกับงาน
+- **Protocol ข้อมูล** — MQTT flow แบบ animate, เทียบ MQTT vs HTTP vs CoAP
+- **Energy & Smart Grid** — Microgrid, จำลองการผลิตไฟ Solar รายวัน, Peak Shaving
+- **EV Charging** — ประเภทหัวชาร์จ และ sequence ของ OCPP
+- **Healthcare IoT** — Vital Sign Monitor และการส่งข้อมูลผ่าน HL7
+- **Security + แบบทดสอบ** — พื้นฐานความปลอดภัย IoT พร้อม Knowledge Check ท้ายบท
+
+## Tech Stack
+
+Next.js · React · Tailwind CSS · Framer Motion — ภาษาไทยทั้งเว็บ 🇹🇭
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+เปิด http://localhost:3000
